@@ -1,13 +1,14 @@
 {
 	"name": "rearrange-files-cli",
 	"bin": {
-		"rearrange-files": "./dist/index.js"
+		"rearrange-files-dev": "./dist/index.js",
+		"rearrange-files": "./dist/bin.js"
 	},
 	"version": "0.0.1",
 	"main": "index.js",
 	"scripts": {
 		"dev": "tsc -w",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"build": "esbuild ./src/index.ts --bundle --platform=node --target=node22.0 --outfile=./dist/bin.js"
 	},
 	"keywords": [],
 	"author": "",
@@ -15,6 +16,7 @@
 	"description": "",
 	"devDependencies": {
 		"@types/node": "^22.12.0",
+		"esbuild": "0.24.2",
 		"typescript": "^5.7.3"
 	},
 	"dependencies": {
